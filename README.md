@@ -6,12 +6,13 @@ To write a python program using OpenCV to swap the region of the image.
 Anaconda - Python 3.7
 ## Algorithm:
 
-1)Load the Images:
+### 1)Load the Images:
 <li>Read Image1 and Image2.</li>
 <li>Ensure both images are the same size. If not, resize one of the images to match the other.</li>
-2)Determine Quadrant Boundaries:
 
-2)Get the height (H) and width (W) of the images.
+### 2)Determine Quadrant Boundaries:
+
+<li>Get the height (H) and width (W) of the images.</li>
 <li>Divide each image into four equal regions:</li>
 <li>Region 1 (R1) = Top-Left (from Image1)</li>
 <li>Region 2 (R2) = Top-Right (from Image1)</li>
@@ -21,24 +22,28 @@ Anaconda - Python 3.7
 <li>Region 6 (R6) = Top-Right (from Image2)</li>
 <li>Region 7 (R7) = Bottom-Left (from Image2)</li>
 <li>Region 8 (R8) = Bottom-Right (from Image2)</li>
-3)Swap Specific Regions:
+
+### 3)Swap Specific Regions:
 <li>Swap R1 from Image1 with R8 from Image2.</li>
 <li>Swap R2 from Image1 with R7 from Image2.</li>
-4)Reconstruct Final Image:
+
+### 4)Reconstruct Final Image:
 <li>Place the swapped regions into their corresponding positions:</li>
 <li>Top-Left: R8 (formerly R1)</li>
 <li>Top-Right: R7 (formerly R2)</li>
 <li>Bottom-Left: R3 (from Image1)</li>
 <li>Bottom-Right: R4 (from Image1)</li>
 <li>Similarly, reconstruct the other image using the swapped regions.</li>
-5)Resize the Final Images:
+
+### 5)Resize the Final Images:
 <li>Convert the last four digits of the registration number to an even number.</li>
 <li>If odd, add 1 to the last digit.</li>
 <li>Set this number as the new width (W_final) and height (H_final) for both final images.</li>
 <li>Resize both final images to the dimensions (W_final, H_final).</li>
-6)Save the Images:
+
+### 6)Save the Images:
 <li>Save the final modified images with appropriate names (e.g., final_image1.jpg and final_image2.jpg).</li>
-```
+
 
 # Program:
 ```
